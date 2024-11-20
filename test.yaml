@@ -1,0 +1,8 @@
+- name: Run Terraform Plan
+  hosts: localhost
+  tasks:
+    - name: Initialize Terraform
+      command: terraform init chdir=/path/to/terraform/files
+
+    - name: Apply Terraform Plan
+      command: terraform apply -auto-approve chdir=/path/to/terraform/files
