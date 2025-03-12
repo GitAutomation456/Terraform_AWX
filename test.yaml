@@ -1,13 +1,14 @@
 - name: Run Terraform Plan
   hosts: localhost
+  gather_facts: no
   tasks:
     - name: Initialize Terraform
-      command: echo "hi "
+      command: hostname
       register: out
 
     - name: Display Output
       debug:
-        msg: "{{ out.stdout_lines }}"
+        msg: "{{ out.stdout }}"
 
       
 
