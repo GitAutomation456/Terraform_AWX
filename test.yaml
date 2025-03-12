@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
     - name: Initialize Terraform
-      command: "hostname"
+      command: echo "hi "
       register: out
 
     - name: Display Output
