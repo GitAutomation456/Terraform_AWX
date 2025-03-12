@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
     - name: Initialize Terraform
-      command: /usr/bin/terraform/terraform --version
+      command: hostname
       register: out
 
     - name: Display Output
