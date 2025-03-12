@@ -1,5 +1,5 @@
 - name: Run Terraform Plan
-  hosts: awx
+  hosts: aws
   tasks:
     - name: Initialize Terraform
       command: terraform --version
