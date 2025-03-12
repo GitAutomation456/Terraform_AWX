@@ -2,7 +2,13 @@
   hosts: localhost
   tasks:
     - name: Initialize Terraform
-      command: terraform init chdir=/path/to/terraform/files
+      command: terraform --version
+      register: out
 
-    - name: Apply Terraform Plan
-      command: terraform apply -auto-approve chdir=/path/to/terraform/files
+    - name: Display Output
+      debug:
+        msg: "{{ out.stdout_lines }}"
+
+      
+
+ 
