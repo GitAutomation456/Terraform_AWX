@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
     - name: Initialize Terraform
-      shell: "terraform --version"
+      shell: "/usr/bin/terraform/terraform --version"
       register: out
 
     - name: Display Output
