@@ -1,5 +1,5 @@
 - name: Run Terraform Plan
-  hosts: localhost
+  hosts: all
   gather_facts: no
   tasks:
     - name: Initialize Terraform
