@@ -1,5 +1,5 @@
 - name: Run Terraform Plan
-  hosts: all
+  hosts: 192.168.0.241
   gather_facts: no
   tasks:
     - name: Initialize Terraform
