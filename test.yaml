@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
     - name: Initialize Terraform
-      command: hostname
+      command: ifconfig
       register: out
 
     - name: Display Output
