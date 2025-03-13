@@ -1,5 +1,5 @@
 - name: Check CPU and Memory Utilization
-  hosts: ansible
+  hosts: all
   gather_facts: no
   tasks:
     - name: Get CPU Utilization
