@@ -4,6 +4,8 @@
   tasks:
     - name: Get CPU Utilization
       shell: "hostname"
+      become: yes
+      become_method: su
       register: cpu_usage
       ignore_errors: yes
     
