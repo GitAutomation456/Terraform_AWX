@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
     - name: Get CPU Utilization
-      command: top -b -n1 | grep "Cpu(s)"
+      shell: ls
       register: cpu_usage
 
     - name: Display CPU Usage
@@ -11,7 +11,7 @@
         msg: "{{ cpu_usage.stdout_lines }}"
 
     - name: Get Memory Utilization
-      command: free -h
+      shell: echo "hi"
       register: memory_usage
 
     - name: Display Memory Usage
