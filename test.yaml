@@ -1,14 +1,23 @@
-- name: Run Terraform Plan
-  hosts: 192.168.0.241
+- name: Check CPU and Memory Utilization
+  hosts: localhost
   gather_facts: no
   tasks:
-    - name: Initialize Terraform
-      shell: hostname
-      register: out
+    - name: Get CPU Utilization
+      command: top -b -n1 | grep "Cpu(s)"
+      register: cpu_usage
 
-    - name: Display Output
+    - name: Display CPU Usage
       debug:
-        msg: "{{ out.stdout }}"
+        msg: "{{ cpu_usage.stdout_lines }}"
+
+    - name: Get Memory Utilization
+      command: free -h
+      register: memory_usage
+
+    - name: Display Memory Usage
+      debug:
+        msg: "{{ memory_usage.stdout_lines }}"
+
 
       
 
