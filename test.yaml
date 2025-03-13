@@ -5,7 +5,7 @@
     SHELL: /bin/bash
   tasks:
     - name: Get CPU Utilization
-      shell: "hostname"
+      shell: ls
       register: cpu_usage
       ignore_errors: yes
     
