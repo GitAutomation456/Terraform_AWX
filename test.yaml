@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
     - name: Get CPU Utilization
-      shell: which terraform
+      shell: "command -v terraform"
       register: cpu_usage
 
     - name: Display CPU Usage
