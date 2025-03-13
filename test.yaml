@@ -3,11 +3,9 @@
   gather_facts: no
   tasks:
     - name: Get CPU Utilization
-      shell: "hostname"
+      shell: "env"
       register: cpu_usage
-      args:
-        executable: /bin/bash
-
+    
     - name: Display CPU Usage
       debug:
         msg: "{{ cpu_usage.stdout_lines }}"
@@ -15,9 +13,7 @@
     - name: Get Memory Utilization
       shell: echo "hi"
       register: memory_usage
-      args:
-        executable: /bin/bash
-
+    
     - name: Display Memory Usage
       debug:
         msg: "{{ memory_usage.stdout_lines }}"
