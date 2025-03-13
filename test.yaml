@@ -1,9 +1,9 @@
 - name: Check CPU and Memory Utilization
-  hosts: all
+  hosts: localhost
   gather_facts: no
   tasks:
     - name: Get CPU Utilization
-      shell: ls
+      shell: which terraform
       register: cpu_usage
 
     - name: Display CPU Usage
