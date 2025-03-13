@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
     - name: Get CPU Utilization
-      shell: echo $SHELL
+      shell: "echo $SHELL"
       register: cpu_usage
 
     - name: Display CPU Usage
