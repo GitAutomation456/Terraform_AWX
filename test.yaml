@@ -3,7 +3,8 @@
   gather_facts: no
   tasks:
     - name: Get CPU Utilization
-      shell: "env"
+      shell: "PATH=/usr/bin:/usr/sbin:/bin:/sbin top -bn1 | grep 'Cpu(s)' | awk '{print $2 + $4}'"
+"
       register: cpu_usage
     
     - name: Display CPU Usage
