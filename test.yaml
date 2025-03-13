@@ -5,6 +5,7 @@
     - name: Get CPU Utilization
       shell: "top -bn1 | grep 'Cpu(s)' | awk '{print $2 + $4}'"
       register: cpu_usage
+      ignore_errors: yes
     
     - name: Display CPU Usage
       debug:
@@ -13,6 +14,7 @@
     - name: Get Memory Utilization
       shell: "free -m | awk 'NR==2{printf \"Memory Usage: %s/%sMB (%.2f%%)\\n\", $3,$2,$3*100/$2 }'"
       register: memory_usage
+      ignore_errors: yes
     
     - name: Display Memory Usage
       debug:
