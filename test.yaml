@@ -1,28 +1,18 @@
-- name: Check CPU and Memory Utilization
+- name: List Files and Echo Message
   hosts: localhost
-  gather_facts: no
-  become: True
   tasks:
-    - name: Get CPU Utilization
-      command: hostnamectl
-      register: cpu_usage
-      ignore_errors: yes
-      
-    
-    - name: Display CPU Usage
+    - name: List all files in the current directory
+      shell: "ls -lah"
+      register: files_list
+
+    - name: Display the list of files
       debug:
-        msg: "{{ cpu_usage.stdout_lines }}"
+        msg: "{{ files_list.stdout_lines }}"
 
-    - name: Get Memory Utilization
-      shell: "free -m | awk 'NR==2{printf \"Memory Usage: %s/%sMB (%.2f%%)\\n\", $3,$2,$3*100/$2 }'"
-      register: memory_usage
-      ignore_errors: yes
-    
-    - name: Display Memory Usage
+    - name: Echo a message
+      shell: "echo 'Hello, this is an Ansible playbook running with Bash!'
+      register: echo_output
+
+    - name: Display echo output
       debug:
-        msg: "{{ memory_usage.stdout_lines }}"
-
-
-      
-
- 
+        msg: "{{ echo_output.stdout }}"
