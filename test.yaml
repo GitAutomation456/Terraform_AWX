@@ -1,13 +1,13 @@
 - name: Check CPU and Memory Utilization
   hosts: localhost
   gather_facts: no
-  environment:
-    SHELL: /bin/bash
+  become: True
   tasks:
     - name: Get CPU Utilization
-      shell: hostnamectl
+      command: hostnamectl
       register: cpu_usage
       ignore_errors: yes
+      
     
     - name: Display CPU Usage
       debug:
