@@ -10,7 +10,7 @@
         msg: "{{ files_list.stdout_lines }}"
 
     - name: Echo a message
-      shell: "echo 'Hello, this is an Ansible playbook running with Bash!'
+      shell: "echo 'Hello, this is an Ansible playbook running with Bash!'"
       register: echo_output
 
     - name: Display echo output
