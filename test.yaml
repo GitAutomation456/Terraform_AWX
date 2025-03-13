@@ -3,8 +3,10 @@
   gather_facts: no
   tasks:
     - name: Get CPU Utilization
-      shell: "echo $0"
+      shell: "hostname"
       register: cpu_usage
+      args:
+        executable: /bin/bash
 
     - name: Display CPU Usage
       debug:
@@ -13,6 +15,8 @@
     - name: Get Memory Utilization
       shell: echo "hi"
       register: memory_usage
+      args:
+        executable: /bin/bash
 
     - name: Display Memory Usage
       debug:
