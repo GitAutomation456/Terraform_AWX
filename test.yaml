@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
     - name: Get CPU Utilization
-      shell: "top -bn1 | grep 'Cpu(s)' | awk '{print $2 + $4}'"
+      shell: "hostname"
       register: cpu_usage
       ignore_errors: yes
     
